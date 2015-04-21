@@ -13,15 +13,21 @@ if (Meteor.isClient) {
   "submit .new-blog": function (event) {
     // This function is called when the new blog form is submitted
 
-    var text = event.target.text.value;
+    var title = event.target.title.value;
+	var email = event.target.email.value;
+	var text = event.target.text.value;
 
     Blogs.insert({
-      text: text,
+      title: title,
+	  email: email,
+	  text: text,
       createdAt: new Date() // current time
     });
 
     // Clear form
-    event.target.text.value = "";
+    event.target.title.value = "";
+	event.target.email.value = "";
+	event.target.text.value = "";
 
     // Prevent default form submit
     return false;
