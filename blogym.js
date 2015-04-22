@@ -1,15 +1,25 @@
 
 Blogs = new Mongo.Collection("blogs");
 
+
+Router.route('/', function () {
+  this.render('blogListTemplate');
+});
+Router.route('/blog/:_id', function () {
+  var blog = Blogs.findOne({_id: this.params._id});
+  this.render('showBlog', {data: blog});
+});
+
+
 if (Meteor.isClient) {
   // This code only runs on the client
-  Template.body.helpers({
+  Template.blogListTemplate.helpers({
     blogs: function () {
       return Blogs.find({}, {sort: {createdAt: -1}, limit: 10});
     }
   });
   
-  Template.body.events({
+  Template.blogListTemplate.events({
   "submit .new-blog": function (event) {
     // This function is called when the new blog form is submitted
 

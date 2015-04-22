@@ -3,7 +3,11 @@
 </head>
 
 <body>
-  <div class="container">
+  
+</body>
+
+<template name="blogListTemplate">
+<div>
     <header>
       <h1>Blog List</h1>
 	  <form class="new-blog">
@@ -13,18 +17,21 @@
 		<input type="submit" value="Post" />
 	  </form>
     </header>
-
     <ul>
       {{#each blogs}}
         {{> blog}}
       {{/each}}
     </ul>
   </div>
-</body>
-
+</template>
 <template name="blog">
   <li>
-	{{title}} - {{email}} - {{text}}
+	<a href="/blog/{{_id}}">{{title}} - {{email}}</a>
 	<button class="delete">&times;</button>
   </li>
+</template>
+<template name="showBlog">
+  <h1>
+	{{title}} - {{email}} - {{text}}
+  </h1>
 </template>
