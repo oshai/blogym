@@ -5,7 +5,7 @@ if (Meteor.isClient) {
   // This code only runs on the client
   Template.body.helpers({
     blogs: function () {
-      return Blogs.find({}, {sort: {createdAt: -1}});
+      return Blogs.find({}, {sort: {createdAt: -1}, limit: 10});
     }
   });
   
