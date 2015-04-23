@@ -1,7 +1,9 @@
 
 Blogs = new Mongo.Collection("blogs");
 
-
+Router.configure({
+  layoutTemplate: 'ApplicationLayout'
+});
 Router.route('/', function () {
   this.render('blogListTemplate');
 });
