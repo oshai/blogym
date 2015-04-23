@@ -1,0 +1,48 @@
+<template name="blogListTemplate">
+	<div class="row marketing">
+		<div class="col-lg-12">
+			<div>
+				<header>
+					<h1>Blog Post List</h1>
+				</header>
+				<ul class="list-group">
+					{{#each blogs}}
+					{{> blog}}
+					{{/each}}
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="jumbotron">
+		<h3>Create new blog</h3>
+		<form  class="new-blog form-horizontal">
+			<div class="form-group">
+				<label for="title" class="col-sm-3 control-label">Blog Post Title</label>
+				<div class="col-sm-9">
+					<input type="text" class="form-control" id="title" name="title" placeholder="Enter title">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="email" class="col-sm-3 control-label">Email address</label>
+				<div class="col-sm-9">
+					<input type="email" class="form-control" id="email" name="email" placeholder="Enter email">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="email">Content</label>
+				<textarea class="form-control" rows="10" name="text" id="text" placeholder="Enter content"></textarea>
+			</div>
+			<button type="submit" class="btn btn-default">Post</button>
+		</form>
+	</div>
+</template>
+<template name="blog">
+	<li class="list-group-item">
+		<a href="/blog/{{_id}}">
+			<h4>{{title}}</h4>
+			{{email}}
+		</a>
+		<button type="button" class="btn btn-danger badge delete"><i class="fa fa-times-circle"></i> Delete</button>
+	</li>
+</template>
+
