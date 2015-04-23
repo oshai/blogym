@@ -19,18 +19,18 @@
 			<div class="form-group">
 				<label for="title" class="col-sm-3 control-label">Blog Post Title</label>
 				<div class="col-sm-9">
-					<input type="text" class="form-control" id="title" name="title" placeholder="Enter title">
+					<input type="text" class="form-control" id="title" name="title" placeholder="Enter title" required>
 				</div>
 			</div>
 			<div class="form-group">
 				<label for="email" class="col-sm-3 control-label">Email address</label>
 				<div class="col-sm-9">
-					<input type="email" class="form-control" id="email" name="email" placeholder="Enter email">
+					<input type="email" class="form-control" id="email" name="email" placeholder="Enter email"  required>
 				</div>
 			</div>
 			<div class="form-group">
 				<label for="email">Content</label>
-				<textarea class="form-control" rows="10" name="text" id="text" placeholder="Enter content"></textarea>
+				<textarea class="form-control" rows="10" name="text" id="text" placeholder="Enter content (html markup is allowed)" required></textarea>
 			</div>
 			<button type="submit" class="btn btn-default">Post</button>
 		</form>
