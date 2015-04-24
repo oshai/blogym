@@ -39,10 +39,10 @@
 <template name="blog">
 	<li class="list-group-item">
 		<a href="/blog/{{_id}}">
-			<h4>{{title}}</h4>
+			<h4 class="blog_title">{{title}}</h4>
 			{{email}}
 		</a>
-		<button type="button" class="btn btn-danger badge delete"><i class="fa fa-times-circle"></i> Delete</button>
+		<button type="button" class="btn btn-danger badge delete blog_remove"><i class="fa fa-times-circle"></i> Delete</button>
 	</li>
 </template>
 

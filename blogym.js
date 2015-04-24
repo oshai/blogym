@@ -53,3 +53,13 @@ if (Meteor.isClient) {
         }
     });
 }
+//Server code
+if (Meteor.isServer) {
+  Meteor.startup(function() {
+    return Meteor.methods({
+      removeAllBlogs: function() {
+        return Blogs.remove({});
+      }
+    });
+  });
+}
