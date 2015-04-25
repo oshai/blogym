@@ -1,0 +1,32 @@
+if (!(typeof MochaWeb === 'undefined')) {
+    MochaWeb.testOnly(function() {
+        describe("test show blog page", function() {
+            beforeEach(function(done) {
+                Meteor.autorun(function() {
+                    Meteor.call('removeAllBlogs', function(err, data) {
+						Blogs.insert({
+							title: "title",
+							email: "email@email",
+							text: "text",
+							createdAt: new Date() // current time
+						});
+						done();
+					});
+                });
+            });
+            it("should show blog status page", function() {
+                Meteor.flush();
+				var href = $(".blog_title").parent().attr('href');
+				window.location.href = href;
+                chai.assert.equal(1, $(".blog-post").length);
+            }); 
+			afterEach(function(done) {
+				var href = $("a:first").attr('href');
+				window.location.href = href;
+				Meteor.call('removeAllBlogs', function(err, data) {
+						done();
+					});
+			});
+        });
+    });
+};
