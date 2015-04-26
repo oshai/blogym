@@ -1,7 +1,7 @@
 # blogym
 a simple blog system written in meteor
 
-See a demo in http://oshai-blogym.meteor.com/
+See a demo in http://oshai-blogym.meteor.com/  
 To deploy a new version (if you have permissions): meteor deploy oshai-blogym.meteor.com
 
 Implementation details:  
