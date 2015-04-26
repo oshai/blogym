@@ -1,4 +1,6 @@
 
+var MAX_BLOG_POSTS = 10;
+
 //database collection
 Blogs = new Mongo.Collection("blogs");
 
@@ -20,7 +22,7 @@ if (Meteor.isClient) {
         blogs: function() {
 			//sort blogs by creation (newest first),
 			//limit number of displayed entries
-            return Blogs.find({}, {sort: {createdAt: -1}, limit: 10});
+            return Blogs.find({}, {sort: {createdAt: -1}, limit: MAX_BLOG_POSTS});
         }
     });
 
