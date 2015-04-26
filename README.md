@@ -12,5 +12,6 @@ Additional packages used:
 *  twbs:bootstrap (twitter bootstrap)
 *  fortawesome:fontawesome (font awesome icons)
 *  iron:router (routing package in meteor)
+*  Tests are written with mocha framework.
 
 
